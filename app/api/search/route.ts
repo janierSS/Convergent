@@ -5,12 +5,13 @@ import { SearchFilters, SearchCategory } from "@/types";
 export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
+  const searchParams = request.nextUrl.searchParams;
+  const category = (searchParams.get("category") || "authors") as SearchCategory;
+  
   try {
-    const searchParams = request.nextUrl.searchParams;
     const query = searchParams.get("q") || "";
     const page = parseInt(searchParams.get("page") || "1");
     const perPage = parseInt(searchParams.get("per_page") || "20");
-    const category = (searchParams.get("category") || "authors") as SearchCategory;
 
     if (!query) {
       return NextResponse.json(

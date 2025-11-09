@@ -31,7 +31,7 @@ const GitHubStarsWheel = ({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
     once: inViewOnce,
-    margin: inViewMargin,
+    margin: inViewMargin as any,
   });
 
   const [displayValue, setDisplayValue] = useState(0);
