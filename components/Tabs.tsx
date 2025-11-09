@@ -12,12 +12,12 @@ interface TabProps {
 
 export function Tab({ children, index, variant = "default" }: TabProps) {
   return (
-    <HeadlessTab className="relative outline-none">
+    <HeadlessTab className="relative outline-none flex-shrink-0">
       {({ selected }) => (
         <>
           <div
             className={`
-              flex items-center gap-2 px-6 py-3 rounded-lg transition-all text-lg
+              flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg transition-all text-sm sm:text-base md:text-lg whitespace-nowrap
               ${selected && variant === "hero" ? "underline decoration-2 underline-offset-4" : ""}
               ${variant === "hero" 
                 ? `text-white ${selected ? "font-bold" : "font-semibold"}`

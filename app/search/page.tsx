@@ -154,7 +154,7 @@ function SearchPageContent() {
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <Navigation />
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex justify-center">
             <SearchBar
               onSearch={handleSearch}
@@ -166,7 +166,7 @@ function SearchPageContent() {
         </div>
       </header>
 
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Role-based Info Banner for Proposals */}
         {category === "proposals" && (
           <motion.div

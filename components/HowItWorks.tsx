@@ -30,24 +30,24 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section className="py-16 sm:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-chime-text mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-chime-text mb-3 sm:mb-4">
             How It Works
           </h2>
-          <p className="text-2xl text-gray-600 max-w-2xl mx-auto font-normal">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-normal px-4">
             Three simple steps to find your perfect research partner
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 sm:gap-12 max-w-6xl mx-auto">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -72,17 +72,17 @@ export default function HowItWorks() {
                 </motion.div>
 
                 {/* Step Number */}
-                <div className="text-chime-mint font-bold text-2xl mb-3">
+                <div className="text-chime-mint font-bold text-xl sm:text-2xl mb-2 sm:mb-3">
                   Step {index + 1}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-3xl font-bold text-chime-text mb-4">
+                <h3 className="text-2xl sm:text-3xl font-bold text-chime-text mb-3 sm:mb-4 px-2">
                   {step.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-lg text-gray-600 leading-relaxed font-normal">
+                <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal px-2">
                   {step.description}
                 </p>
               </motion.div>

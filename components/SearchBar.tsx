@@ -84,27 +84,30 @@ export default function SearchBar({
     >
       {/* Category Selector */}
       {showCategorySelector && (
-        <div className="mb-3">
+        <div className="mb-3 -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto scrollbar-hide">
           <TabGroup selectedIndex={selectedIndex} onChange={handleCategoryChange}>
-            <TabList className="flex gap-2 justify-center">
+            <TabList className="flex gap-2 justify-center sm:justify-center min-w-max sm:min-w-0">
               {role === "faculty" ? (
                 <Tab index={0} variant={tabVariant}>
-                  <DocumentTextIcon className="w-6 h-6" />
-                  All Proposals
+                  <DocumentTextIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+                  <span className="hidden xs:inline">All Proposals</span>
+                  <span className="xs:hidden">Proposals</span>
                 </Tab>
               ) : (
                 <>
                   <Tab index={0} variant={tabVariant}>
-                    <UserGroupIcon className="w-6 h-6" />
+                    <UserGroupIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                     Authors
                   </Tab>
                   <Tab index={1} variant={tabVariant}>
-                    <BuildingLibraryIcon className="w-6 h-6" />
-                    Institutions
+                    <BuildingLibraryIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <span className="hidden xs:inline">Institutions</span>
+                    <span className="xs:hidden">Orgs</span>
                   </Tab>
                   <Tab index={2} variant={tabVariant}>
-                    <DocumentTextIcon className="w-6 h-6" />
-                    {role === "company" ? "My Proposals" : "All Proposals"}
+                    <DocumentTextIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <span className="hidden xs:inline">{role === "company" ? "My Proposals" : "All Proposals"}</span>
+                    <span className="xs:hidden">Proposals</span>
                   </Tab>
                 </>
               )}
@@ -133,21 +136,21 @@ export default function SearchBar({
               w-full bg-white border-2 border-gray-200 rounded-full
               ${
                 size === "large"
-                  ? "px-4 py-2 text-xl"
-                  : "px-3 py-2 text-lg"
+                  ? "px-4 py-2 text-base sm:text-lg md:text-xl"
+                  : "px-3 py-2 text-base sm:text-lg"
               }
-              pl-16 pr-36
+              pl-12 sm:pl-14 md:pl-16 pr-24 sm:pr-32 md:pr-36
               focus:outline-none focus:border-chime-mint focus:ring-4 focus:ring-chime-light-mint
               transition-all duration-300 shadow-lg hover:shadow-xl font-normal
             `}
           />
-          <MagnifyingGlassIcon className={`absolute left-5 top-1/2 -translate-y-1/2 ${size === "large" ? "w-8 h-8" : "w-7 h-7"} text-gray-400`} />
+          <MagnifyingGlassIcon className={`absolute left-3 sm:left-4 md:left-5 top-1/2 -translate-y-1/2 ${size === "large" ? "w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" : "w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7"} text-gray-400`} />
           <div className="absolute right-2 top-1/2 -translate-y-1/2">
             <motion.button
               type="submit"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`bg-chime-mint-light text-white hover:bg-chime-teal active:shadow-button-active ${size === "large" ? "px-8 py-3 text-lg" : "px-6 py-2 text-base"} rounded-full font-semibold transition-all`}
+              className={`bg-chime-mint-light text-white hover:bg-chime-teal active:shadow-button-active ${size === "large" ? "px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 text-sm sm:text-base md:text-lg" : "px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base"} rounded-full font-semibold transition-all`}
             >
               Search
             </motion.button>

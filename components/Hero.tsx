@@ -71,18 +71,18 @@ export default function Hero() {
 
         {/* Quick Search Suggestions */}
         <motion.div
-          className="mt-8 flex flex-wrap justify-center gap-3"
+          className="mt-8 flex flex-wrap justify-center gap-2 sm:gap-3 px-4 sm:px-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <span className="text-white/80 text-base font-medium">Try:</span>
+          <span className="text-white/80 text-sm sm:text-base font-medium w-full sm:w-auto text-center sm:text-left mb-1 sm:mb-0">Try:</span>
           {["AI & Machine Learning", "Biotech", "Quantum Computing", "Robotics"].map(
             (term) => (
               <button
                 key={term}
                 onClick={() => handleSearch(term)}
-                className="px-6 py-3 bg-white/20 hover:bg-white/30 active:shadow-[0_0_0_4px_rgba(255,255,255,0.3),0_4px_12px_rgba(0,0,0,0.15)] text-white text-base font-medium rounded-full transition-all backdrop-blur-sm"
+                className="px-4 sm:px-6 py-2 sm:py-3 bg-white/20 hover:bg-white/30 active:shadow-[0_0_0_4px_rgba(255,255,255,0.3),0_4px_12px_rgba(0,0,0,0.15)] text-white text-sm sm:text-base font-medium rounded-full transition-all backdrop-blur-sm"
               >
                 {term}
               </button>
